@@ -1,0 +1,49 @@
+- 👋 Hi, I’m @mohamedilyas29
+- 👀 I’m interested in ...
+- 🌱 I’m currently learning ...
+- 💞️ I’m looking to collaborate on ...
+- 📫 How to reach me ...
+
+<!---
+mohamedilyas29/mohamedilyas29 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+--->
+from turtle import Turtle, Screen
+import random
+
+race_on=False
+
+screen = Screen()
+screen.setup(width=500,height=400)
+user_bet=screen.textinput(title="make a bet",prompt="which turtle will win the race?enter the colour\n"
+                                                    "[red,green,orange,pink,purple,blue]")
+colour=["red","green","pink","orange","purple","blue"]
+y_position=[-100,-50,-0,50,100,150]
+all_turtle=[]
+
+for turtle_index in range(0,5):
+    tim = Turtle(shape="turtle")
+    tim.color(colour[turtle_index])
+    tim.penup()
+    tim.goto(x=-230, y=y_position[turtle_index])
+    all_turtle.append(tim)
+
+if user_bet:
+    race_on=True
+
+while race_on:
+
+    for turtle in all_turtle:
+        if turtle.xcor() > 230:
+            race_on = False
+            winning_color = turtle.pencolor()
+            if winning_color == user_bet:
+                print("you are winner")
+            else:
+                print("you are loser")
+
+
+        turtle_distance=random.randint(0,10)
+        turtle.forward(turtle_distance)
+
+screen.exitonclick()
