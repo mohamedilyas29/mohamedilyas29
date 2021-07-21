@@ -1,0 +1,30 @@
+import turtle as t
+import random
+tim = t.Turtle()
+colours=["medium blue","green","maroon","deep pink","orange red","red","navy","gold"]
+
+def draw_shape_l(number_side):
+    angle=360/number_side
+    for _ in range(number_side):
+        tim.forward(100)
+        tim.left(angle)
+def draw_shape_r(number_side):
+    angle=360/number_side
+    for _ in range(number_side):
+        tim.forward(100)
+        tim.right(angle)
+for draw_shape_nl in range (3,10):
+    tim.color(random.choice(colours))
+    draw_shape_l(draw_shape_nl)
+for draw_shape_nr in range (3,10):
+    tim.color(random.choice(colours))
+    draw_shape_r(draw_shape_nr)
+tim.color("white")
+tim.back(280)
+for draw_shape_circle in range(30,150,20):
+    tim.color(random.choice(colours))
+    tim.circle(draw_shape_circle)
+tim.color("medium blue")
+tim.right(90)
+tim.forward(250)
+t.mainloop()
