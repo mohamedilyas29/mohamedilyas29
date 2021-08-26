@@ -1,0 +1,38 @@
+- 👋 Hi, I’m @mohamedilyas29
+- 👀 I’m interested in ...
+- 🌱 I’m currently learning ...
+- 💞️ I’m looking to collaborate on ...
+- 📫 How to reach me ...
+
+<!---
+mohamedilyas29/mohamedilyas29 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+You can click the Preview link to take a look at your changes.
+--->
+from tkinter import*
+
+windows=Tk()
+windows.title("Zakat calculator")
+windows.config(padx=10,pady=10)
+
+
+def zakat_calculation():
+     zakat=float(entry_profit.get())
+     result=(zakat*2.5)/100
+     zakat_result.config(text=f"{result}")
+
+profit_label=Label(text="Enter the profit")
+profit_label.grid(column=1,row=0)
+
+entry_profit=Entry()
+entry_profit.grid(column=1,row=1)
+
+click_label=Button(text="Click",command=zakat_calculation)
+click_label.grid(column=2,row=1)
+
+zakat_result=Label(text="0")
+zakat_result.grid(column=1,row=2)
+
+zakat_label=Label(text="Your zakat is")
+zakat_label.grid(column=0,row=2)
+
+windows.mainloop()
