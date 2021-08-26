@@ -1,0 +1,88 @@
+### Hi there 👋
+
+<!--
+**mohamedilyas29/mohamedilyas29** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+Here are some ideas to get you started:
+
+- 🔭 I’m currently working on ...
+- 🌱 I’m currently learning ...
+- 👯 I’m looking to collaborate on ...
+- 🤔 I’m looking for help with ...
+- 💬 Ask me about ...
+- 📫 How to reach me: ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+-->
+from tkinter import*
+
+windows=Tk()
+windows.title("money calculator")
+windows.minsize(width=400,height=200)
+windows.config(padx=20,pady=20)
+
+def cal():
+    r1=float(entry1.get())*10
+    r2=float(entry2.get())*20
+    r3=float(entry3.get())*50
+    r4=float(entry4.get())*100
+    r5=float(entry5.get())*200
+    r6=float(entry6.get())*500
+    r7=float(entry7.get())*2000
+    total=r1+r2+r3+r4+r5+r6+r7
+    result_label.config(text=f"{total}")
+
+
+
+root_1=Label(text="10        :")
+root_1.config(padx=10,pady=10)
+root_1.grid(column=0,row=0)
+entry1=Entry()
+entry1.grid(column=1,row=0)
+
+root_2=Label(text="20        :")
+root_2.config(padx=10,pady=10)
+root_2.grid(column=0,row=1)
+entry2=Entry()
+entry2.grid(column=1,row=1)
+
+root_3=Label(text="50        :")
+root_3.config(padx=10,pady=10)
+root_3.grid(column=0,row=2)
+entry3=Entry()
+entry3.grid(column=1,row=2)
+
+root_4=Label(text="100       :")
+root_4.config(padx=10,pady=10)
+root_4.grid(column=0,row=3)
+entry4=Entry()
+entry4.grid(column=1,row=3)
+
+root_5=Label(text="200       :")
+root_5.config(padx=10,pady=10)
+root_5.grid(column=0,row=4)
+entry5=Entry()
+entry5.grid(column=1,row=4)
+
+root_6=Label(text="500       :")
+root_6.config(padx=10,pady=10)
+root_6.grid(column=0,row=5)
+entry6=Entry()
+entry6.grid(column=1,row=5)
+
+root_7=Label(text="2000      :")
+root_7.config(padx=10,pady=10)
+root_7.grid(column=0,row=6)
+entry7=Entry()
+entry7.grid(column=1,row=6)
+
+result_label=Label(text="0")
+result_label.config(padx=10,pady=10)
+result_label.grid(column=1,row=7)
+
+
+button=Button(text="CALCULATOR",command=cal)
+button.config(padx=3,pady=3)
+button.grid(column=0,row=7)
+
+windows.mainloop()
